@@ -1,8 +1,10 @@
 ﻿using Autofac;
 using Autofac.Integration.Mvc;
+using EverythingWeb.Entity;
 using EverythingWeb.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -41,6 +43,11 @@ namespace EverythingWeb
 
             var container = builder.Build();
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+
+            //使用此方法防止重新创建数据库
+            Database.SetInitializer(new CreateDatabaseIfNotExists<MyContext>());
+            //如果数据结构改变，需要用此方法执行一次
+            //Database.SetInitializer(new MyMusicDbInitializer());
 
 
             AreaRegistration.RegisterAllAreas();

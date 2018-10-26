@@ -18,6 +18,7 @@ namespace EverythingWeb.Controllers
         // GET: Hero
         public ActionResult Index()
         {
+            //使用依赖注入
             string content = string.Concat(Monster.MyName(), "用", Monster.MyWeapon(), "攻击了我", Monster.Attack().ToString(), "点血");
             return Content(content);
         }
