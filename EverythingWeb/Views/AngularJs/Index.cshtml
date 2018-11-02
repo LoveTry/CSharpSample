@@ -13,6 +13,11 @@
     </div>*@
 <div ng-app="music">
     <div ng-controller="ListController">
-        {{music[0].ID}}
+        <table>
+            <tr ng-repeat="music in musics">
+                <td>{{music.Name}}</td>
+            </tr>
+        </table>
+
     </div>
 </div>

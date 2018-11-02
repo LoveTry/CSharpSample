@@ -16,7 +16,7 @@
             //for (var p in respsone) {
             //    document.write(p + ":" + respsone[p] + "<br />");
             //}
-            $scope.music = respsone.data;
+            $scope.musics = respsone.data;
         });
     };
     //注解组件 防止压缩简化参数名
