@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Client/Scripts/music.js"></script>
+    <script src="~/Client/Scripts/listController.js"></script>
+}
+<h2>Index</h2>
+@*<div data-ng-app>
+        {{true?"true":"false"}}
+    </div>*@
+<div ng-app="music">
+    <div ng-controller="ListController">
+        {{music[0].ID}}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿
+@{
+                /**/
+
+                ViewBag.Title = "Js Demo";
+}
+
+<h2>@ViewBag.Title</h2>
+@section scripts{
+    <script type="text/javascript">
+        $(function () {
+            $(".container img").mouseover(function () {
+                $(this).animate({ height: '+=25', width: '+=25' })
+                    .animate({ height: '-=25', width: '-=25' });
+            });
+        });
+    </script>
+}
+<div class="container">
+    <img width="50%" height="50%" src="~/Img/idear.jpg" />
+</div>

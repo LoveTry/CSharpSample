@@ -13,7 +13,7 @@ namespace EverythingWeb.Controllers
     public class MusicController : Controller
     {
         MyContext context = new MyContext();
-        
+
         public ActionResult Search()
         {
             if (Request.Params["q"] != null)
@@ -27,7 +27,6 @@ namespace EverythingWeb.Controllers
         }
 
         [HttpGet]
-        [AllowAnonymous]
         public ActionResult Create()
         {
             GetCode();
@@ -76,6 +75,18 @@ namespace EverythingWeb.Controllers
             return Content("正在下载");
         }
 
+        [Route("name/{id:int}")]
+        public ActionResult RouteDemo(int id)
+        {
+            //只有参数为int类型才会匹配
+            return View();
+        }
+
+        [Route("name/{id}")]
+        public ActionResult RouteDemo(string id)
+        {
+            return View();
+        }
 
         private void GetCode()
         {
@@ -94,7 +105,7 @@ namespace EverythingWeb.Controllers
             {
                 ViewBag.MusicStyleList = new SelectListItem();
             }
-            
+
 
         }
 
@@ -102,6 +113,11 @@ namespace EverythingWeb.Controllers
         private Tuple<string, string> GetData(int a, int b)
         {
             return Tuple.Create<string, string>(a.ToString(), b.ToString());
+        }
+
+        private void AutoRandom()
+        {
+            var query = context.Musics.OrderBy(a => Guid.NewGuid()).First();
         }
     }
 }
