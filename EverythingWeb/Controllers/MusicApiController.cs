@@ -20,6 +20,7 @@ namespace EverythingWeb.Controllers
             return context.Musics;
         }
 
+        [HttpGet]
         public IHttpActionResult GetMusic(Guid id)
         {
             var music = context.Musics.Find(id);

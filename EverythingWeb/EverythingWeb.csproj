@@ -146,6 +146,7 @@
     <Compile Include="Comm\Const.cs" />
     <Compile Include="Comm\Extensionscs.cs" />
     <Compile Include="Controllers\AngularJsController.cs" />
+    <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HeroController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JsController.cs" />
@@ -167,8 +168,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Client\Scripts\DetailsController.js" />
+    <Content Include="Client\Scripts\EditController.js" />
     <Content Include="Client\Scripts\listController.js" />
     <Content Include="Client\Scripts\music.js" />
+    <Content Include="Client\Scripts\musicService.js" />
+    <Content Include="Client\Views\details.html" />
+    <Content Include="Client\Views\edit.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -182,6 +188,8 @@
     </Content>
     <Content Include="Img\idear.jpg" />
     <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular-route.js" />
+    <Content Include="Scripts\angular-route.min.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -203,6 +211,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Scripts\angular.min.js.map" />
+    <Content Include="Scripts\angular-route.min.js.map" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -249,9 +258,11 @@
     <Content Include="Views\Music\Create.cshtml" />
     <Content Include="Views\Js\Index.cshtml" />
     <Content Include="Views\AngularJs\Index.cshtml" />
+    <Content Include="Views\Home\Index.Mobile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Default\" />
     <Folder Include="Views\Hero\" />
   </ItemGroup>
   <ItemGroup>

@@ -1,23 +1,36 @@
 ﻿
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Angular Demo";
 }
 @section scripts{
     <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
     <script src="~/Client/Scripts/music.js"></script>
     <script src="~/Client/Scripts/listController.js"></script>
+    <script src="~/Client/Scripts/DetailsController.js"></script>
+    <script src="~/Client/Scripts/musicService.js"></script>
+    <script src="~/Client/Scripts/EditController.js"></script>
 }
-<h2>Index</h2>
+<h2>Angular Demo</h2>
 @*<div data-ng-app>
         {{true?"true":"false"}}
     </div>*@
 <div ng-app="music">
     <div ng-controller="ListController">
-        <table>
+        <table class="table table-striped">
+            <tr>
+                <th>歌曲名</th>
+                <th></th>
+                <th></th>
+            </tr>
             <tr ng-repeat="music in musics">
                 <td>{{music.Name}}</td>
+                <td><a class="btn btn-primary" href="#!/details/{{music.ID}}">Details</a></td>
+                <td><button class="btn btn-primary" ng-click="delete(music)">Delete</button></td>
             </tr>
         </table>
-
+        <button class="btn btn-primary" ng-click="create()">Create</button>
+        <div ng-include="'/Client/Views/edit.html'"></div>
     </div>
+    <ng-view></ng-view>
 </div>

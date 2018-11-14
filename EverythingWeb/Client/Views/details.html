@@ -1,0 +1,6 @@
+﻿<div ng-controller="DetailsController">
+    <h2>{{music.Name}}</h2>
+    <div>演唱者：{{music.Singer}}</div>
+    <button class="btn btn-primary" ng-click="edit()">Edit</button>
+    <div ng-include="'/Client/Views/edit.html'"></div>
+</div>
