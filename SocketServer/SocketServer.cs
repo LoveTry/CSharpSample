@@ -19,7 +19,8 @@ namespace SocketServer
         {
             InitializeComponent();
         }
-
+        //Server端：创建Socket bind listen Accept新Socket Receive
+        //客户端：创建Socket Connect Send
         private void SocketServer_Load(object sender, EventArgs e)
         {
             //非UI线程运行访问UI线程的控件，默认为true，防止多个并发线程尝试对UI进行读写时，容易造成线程争用资源带来的死锁。

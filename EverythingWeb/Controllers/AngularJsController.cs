@@ -12,6 +12,7 @@ namespace EverythingWeb.Controllers
         public ActionResult Index()
         {
             return View();
+            
         }
     }
 }
